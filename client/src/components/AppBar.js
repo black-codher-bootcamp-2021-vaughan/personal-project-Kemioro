@@ -44,7 +44,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ mr: 1, display: { xs: 'none', md: 'flex' } }}
           >
-            LOGO
+            NOGO
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {AppBar} from "./components/AppBar";
+import AppBar from "./components/AppBar";
 import {ProfileCard} from "./components/ProfileCard"
 
 
@@ -29,6 +29,7 @@ function App() {
 
   return (
     <div>
+      <AppBar/>
      {/* <Button variant="text">Text</Button> */}
         <ul>
           {profiles && profiles.length > 0 ? (

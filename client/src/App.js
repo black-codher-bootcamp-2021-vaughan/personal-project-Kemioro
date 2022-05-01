@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import {AppBar} from "./components/AppBar";
+import {ProfileCard} from "./components/ProfileCard"
+
 
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllProfiles } from "./services/profileService";
@@ -18,28 +21,24 @@ function App() {
   }, [profiles]);
 
   const renderProfile = (user) => {
+    console.log(user)
     return (
-      <li key={user._id}>
-        <h3>
-          {`${user.first_name} 
-          ${user.last_name}`}
-        </h3>
-        <p>{user.location}</p>
-      </li>
-    );
-  };
+      <ProfileCard profile={user.first_name} score={user.score} scoreTotal={"score"}></ProfileCard>
+      
+    )};
 
   return (
     <div>
-      <ul>
-        {profiles && profiles.length > 0 ? (
-          profiles.map((profile) => renderProfile(profile))
-        ) : (
-          <p>No profiles found</p>
-        )}
-      </ul>
-    </div>
-  );
-}
+     {/* <Button variant="text">Text</Button> */}
+        <ul>
+          {profiles && profiles.length > 0 ? (
+            profiles.map((profile) => renderProfile(profile))
+          ) : (
+            <p>No profiles found</p>
+          )}
+        </ul>
+      </div>
+    );
+  }
 
 export default App;

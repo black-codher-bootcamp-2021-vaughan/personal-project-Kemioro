@@ -5,7 +5,7 @@ All of your front end code should be in this folder.
 Once you have your development environment up and running you'll be able to see the app running here:
 
 ```plain
-http://localhost:3000
+http://localhost:3000 
 ```
 
 ## Example App

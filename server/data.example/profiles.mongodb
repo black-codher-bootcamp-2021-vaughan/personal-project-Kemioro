@@ -1,31 +1,151 @@
 // Below is some initial sample data to get you started.
 
-use("example_db"); // This is our example database. Make sure you don't call your database "example_db".
+// This is our example database. Make sure you don't call your database "example_db".
+use('phishy_db')
 
 // The drop() command destroys all data from a collection.
 // Make sure you run it against the correct database and collection.
 db.profiles.drop();
 
-// Insert a few documents into the profiles collection.
-db.profiles.insertMany([  
+// Remove assigned id's NOTE IMPORTANT 
+
+// my first attempt at writing a database, have 5 examples
+// need to make scores an array
+
+db.profiles.insertMany([
     {
-        "first_name": "Efua",
-        "last_name": "Akumanyi",
-        "location": "London"
+        "first_name" : "Kemi",
+        "last_name" : "Orogun",
+        "email_address": "kemiorogun@outlook.com",
+        "created_date": "13-05-2022",
+        "status" : "email sent",
+        "score" : {
+            "email_sent" : "1",
+            "email_opened" : "0",
+            "email_closed" : "1",
+            "clicked_link" : "0",
+            "submitted_data" : "0",
+            "total_time" : "124"
+        }
     },
     {
-        "first_name": "Gary",
-        "last_name": "McPherson",
-        "location": "London"
+        "first_name" : "Lisa",
+        "last_name" : "Orogun",
+        "email_address": "lisorogun@gmail.com",
+        "created_date": "11-05-2022",
+        "status" : "clicked link",
+        "score" : {
+            "email_sent" : "1",
+            "email_opened" : "1",
+            "email_closed" : "0",
+            "clicked_link" : "1",
+            "submitted_data" : "1",
+            "total_time" : "257"
+        }
     },
     {
-        "first_name": "Tanya",
-        "last_name": "Powell",
-        "location": "London"
+        "first_name" : "Kyle",
+        "last_name" : "Peters",
+        "email_address": "kylepeters@gmail.com",
+        "created_date": "12-05-2022",
+        "status" : "email sent",
+        "score" : {
+            "email_sent" : "1",
+            "email_opened" : "0",
+            "email_closed" : "0",
+            "clicked_link" : "0",
+            "submitted_data" : "0",
+            "total_time" : "0"
+        }
     },
     {
-        "first_name": "Michael",
-        "last_name": "Hael",
-        "location": "Port Harcourt city"
-    }
-]);
+        "first_name" : "Camille",
+        "last_name" : "Landers",
+        "email_address": "camillelanders@gmail.com",
+        "created_date": "08-05-2022",
+        "status" : "submitted data",
+        "score" : {
+            "email_sent" : "1",
+            "email_opened" : "1",
+            "email_closed" : "0",
+            "clicked_link" : "1",
+            "submitted_data" : "1",
+            "total_time" : "391"
+        }
+    },
+    {
+        "first_name" : "Amber",
+        "last_name" : "Walsh",
+        "email_address": "amberwalsh@yahoo.com",
+        "created_date": "07-05-2022",
+        "status" : "clicked link",
+        "score" : {
+            "email_sent" : "1",
+            "email_opened" : "0",
+            "email_closed" : "1",
+            "clicked_link" : "0",
+            "submitted_data" : "0",
+            "total_time" : "180"
+        }
+    },
+    {
+        "first_name" : "Gene",
+        "last_name" : "Patterson",
+        "email_address": "genepatterson@gmail.com",
+        "created_date": "11-05-2022",
+        "status" : "clicked link",
+        "score" : {
+            "email_sent" : "1",
+            "email_opened" : "1",
+            "email_closed" : "1",
+            "clicked_link" : "1",
+            "submitted_data" : "0",
+            "total_time" : "209"
+        }
+    },
+    {
+        "first_name" : "Aileen",
+        "last_name" : "Moore",
+        "email_address": "aileenmoore@outlook.com",
+        "created_date": "11-05-2022",
+        "status" : "email sent",
+        "score" : {
+            "email_sent" : "1",
+            "email_opened" : "0",
+            "email_closed" : "0",
+            "clicked_link" : "0",
+            "submitted_data" : "0",
+            "total_time" : "0"
+        }
+    },
+    {
+        "first_name" : "Ellis",
+        "last_name" : "Quest",
+        "email_address": "ellisquest@mgmt.com",
+        "created_date": "13-05-2022",
+        "status" : "clicked link",
+        "score" : {
+            "email_sent" : "1",
+            "email_opened" : "1",
+            "email_closed" : "0",
+            "clicked_link" : "0",
+            "submitted_data" : "0",
+            "total_time" : "243"
+        }
+    },
+     {
+        "first_name" : "Jeremih",
+        "last_name" : "Neele",
+        "email_address": "jeremihneele@mgmt.com",
+        "created_date": "03-05-2022",
+        "status" : "clicked link",
+        "score" : {
+            "email_sent" : "1",
+            "email_opened" : "1",
+            "email_closed" : "0",
+            "clicked_link" : "1",
+            "submitted_data" : "0",
+            "total_time" : "243"
+        }
+    }    
+])

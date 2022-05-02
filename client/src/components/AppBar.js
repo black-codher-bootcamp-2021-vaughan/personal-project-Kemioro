@@ -11,6 +11,8 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { Link as RouterLink} from "react-router-dom";
+import Link from '@mui/material/Link';
 
 const pages = ['About Phishy', 'Blog', 'Whats Next?'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -44,7 +46,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ mr: 50, display: { xs: 'none', md: 'flex' } }}
           >
-            PHISHY
+            <Link to="/" color="inherit" component={RouterLink}>PHISHY</Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -89,7 +91,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            PHISHY
+            <Link to="/" color="inherit" component={RouterLink}>PHISHY</Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (

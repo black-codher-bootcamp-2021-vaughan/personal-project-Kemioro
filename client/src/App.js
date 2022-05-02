@@ -1,43 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import AppBar from "./components/AppBar";
-import {ProfileCard} from "./components/ProfileCard"
+import {Routes, Route} from "react-router-dom";
+import Home from "./routes/Home";
+import AboutPhishy from "./routes/AboutPhishy";
+import Blog from "./routes/Blog";
+import WhatsNext from "./routes/WhatsNext";
+import Admin from "./routes/Admin";
 
-
-// SERVICES THAT CALL OUR API ENDPOINTS
-import { getAllProfiles } from "./services/profileService";
 
 function App() {
-  const [profiles, setProfiles] = useState(null);
-
-  useEffect(() => {
-    async function getProfiles() {
-      if (!profiles) {
-        const response = await getAllProfiles();
-        setProfiles(response);
-      }
-    }
-
-    getProfiles();
-  }, [profiles]);
-
-  const renderProfile = (user) => {
-    console.log(user)
-    return (
-      <ProfileCard profile={user.first_name} score={user.score} scoreTotal={"score"}></ProfileCard>
-      
-    )};
+  
 
   return (
     <div>
       <AppBar/>
-     {/* <Button variant="text">Text</Button> */}
-        <ul>
-          {profiles && profiles.length > 0 ? (
-            profiles.map((profile) => renderProfile(profile))
-          ) : (
-            <p>No profiles found</p>
-          )}
-        </ul>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="AboutPhishy" element={<AboutPhishy />} />
+        <Route path="Blog" element={<Blog />} />
+        <Route path="WhatsNext" element={<WhatsNext />} />
+        <Route path="Admin" element={<Admin />} />
+      </Routes>
       </div>
     );
   }

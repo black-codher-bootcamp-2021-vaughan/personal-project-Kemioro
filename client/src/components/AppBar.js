@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link as RouterLink} from "react-router-dom";
 import Link from '@mui/material/Link';
 
-const pages = ['About Phishy', 'Blog', 'Whats Next?'];
+const pages = [['About Phishy', '/AboutPhishy'], ['Blog', '/Blog'], ['Whats Next?', '/WhatsNext']];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
@@ -78,8 +78,9 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+              {pages.map(([page, path]) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu} component={RouterLink} to={path}>
+                  
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -94,11 +95,13 @@ const ResponsiveAppBar = () => {
             <Link to="/" color="inherit" component={RouterLink}>PHISHY</Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {pages.map(([page, path]) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
+                component={RouterLink}
+                to={path}
               >
                 {page}
               </Button>

@@ -15,7 +15,7 @@ import { Link as RouterLink} from "react-router-dom";
 import Link from '@mui/material/Link';
 
 const pages = [['About Phishy', '/AboutPhishy'], ['Blog', '/Blog'], ['Whats Next?', '/WhatsNext']];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = [['Profile', '/Profile'], ['Account', '/Account'], ['Dashboard', '/Dashboard'], ['Logout', '/Logout']];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -130,8 +130,8 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+              {settings.map(([setting, path]) => (
+                <MenuItem key={setting} onClick={handleCloseUserMenu} component={RouterLink} to={path}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

@@ -10,7 +10,7 @@ import Admin from "./routes/Admin";
 
 
 function App() {
-  
+
 
   return (
     <div>

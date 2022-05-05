@@ -33,27 +33,27 @@ export const ProfileCard = ({profile, score, username, status, date, imageUrl })
           <ul>
             <li>
               Email Sent?<br/>
-              {score.email_sent ? "yes" : "no" }
+              {score.email_sent ? "Yes" : "No" }
             </li>
             <li>
               Email Opened?<br/>
-              {score.email_opened ? "yes" : "no" }
+              {score.email_opened ? "Yes" : "No" }
             </li>
             <li>
               Email Closed?<br/>
-              {score.email_closed ? "yes" : "no" }
+              {score.email_closed ? "Yes" : "No" }
             </li>
             <li>
               Clicked Link?<br/>
-              {score.clinked_link ? "yes" : "no" }
+              {score.clinked_link ? "Yes" : "No" }
             </li>
             <li>
               Submitted Data?<br/>
-              {score.submitted_data ? "yes" : "no" }
+              {score.submitted_data ? "Yes" : "No" }
             </li>
             <li>
               Total Time?<br/>
-              {score.total_time ? "yes" : "no" }
+              {score.total_time ? "Yes" : "No" }
             </li>
           </ul>
         

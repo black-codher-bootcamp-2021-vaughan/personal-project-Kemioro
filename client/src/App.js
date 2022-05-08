@@ -19,7 +19,7 @@ function App() {
     <div>
       <AppBar/>
       <Routes>
-        <Route path="/" element={<Home setUser= {setUser}/>} />
+        <Route path="/" element={<Home setUser= {setUser} user= {user}/>} />
         <Route path="AboutPhishy" element={<AboutPhishy />} />
         <Route path="Blog" element={<Blog />} />
         <Route path="WhatsNext" element={<WhatsNext />} />

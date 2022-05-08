@@ -1,15 +1,23 @@
 import { createTheProfile } from "../services/profileService"
-export default function Home({setUser}) {
-  function handleSubmit(event) {
-    setUser("Test User")
+export default function Home({setUser, user}) {
+  async function handleSubmit(event) {
+    
     event.preventDefault()
     const formData = new FormData(event.target)
     const data = Object.fromEntries(formData)
     console.log("Form has been Submitted", data)
-    createTheProfile(data)
+    const result = await createTheProfile(data)
+    setUser(result.profile)
   }
 
-
+  if (user != null){
+    return (
+      <main style={{ padding: "1rem 0" }}>
+        <h2>Welcome to Phishy, {user.first_name}</h2> 
+        {/* in future, I can add user stuff such as 'start test' */}
+      </main>
+    )
+  } 
 
     return (
       <main style={{ padding: "1rem 0" }}>

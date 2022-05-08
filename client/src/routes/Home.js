@@ -14,7 +14,8 @@ export default function Home({setUser, user}) {
     return (
       <main style={{ padding: "1rem 0" }}>
         <h2>Welcome to Phishy, {user.first_name}</h2> 
-        {/* in future, I can add user stuff such as 'start test' */}
+        {/* in future, I can add user stuff such as 'start test' 
+        work on this for Monday's class (userface feel)*/}
       </main>
     )
   } 

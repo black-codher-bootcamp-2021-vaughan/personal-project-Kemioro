@@ -6,7 +6,7 @@ import AboutPhishy from "./routes/AboutPhishy";
 import Blog from "./routes/Blog";
 import WhatsNext from "./routes/WhatsNext";
 import Admin from "./routes/Admin";
-
+import "./App.css"
 
 
 function App() {

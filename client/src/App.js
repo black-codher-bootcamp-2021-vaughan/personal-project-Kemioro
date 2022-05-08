@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useState}from "react";
 import AppBar from "./components/AppBar";
 import {Routes, Route} from "react-router-dom";
 import Home from "./routes/Home";
@@ -10,13 +10,16 @@ import Admin from "./routes/Admin";
 
 
 function App() {
+  const [user, setUser] = useState(null)
+  console.log(user)
+
 
 
   return (
     <div>
       <AppBar/>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home setUser= {setUser}/>} />
         <Route path="AboutPhishy" element={<AboutPhishy />} />
         <Route path="Blog" element={<Blog />} />
         <Route path="WhatsNext" element={<WhatsNext />} />
